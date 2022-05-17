@@ -17,19 +17,14 @@ export class CartStatusComponent implements OnInit {
     this.updateCartStatus();
   }
 
-  log(thePrice: number, theQuantity: number) {
-    console.log(`thePrice: ${thePrice}, theQuantity: ${theQuantity}`)
-  }
-
 
   private updateCartStatus() {
-    console.log("vao ham updateCartStatus ko")
+
     this.cartService.totalPrice.subscribe(
       data => this.totalPrice = data
     )
     this.cartService.totalQuantity.subscribe(
       data => this.totalQuantity = data
     )
-    this.log(this.totalPrice, this.totalQuantity)
   }
 }
